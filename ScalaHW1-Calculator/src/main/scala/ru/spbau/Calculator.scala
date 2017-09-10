@@ -21,9 +21,9 @@ object Calculator {
     var currentNumbers = numbers
     var currentOperations = operations
 
-    if (operations.isEmpty || operations.head.isBinary) {
-      stackOfNumbers.add(numbers.head)
-      currentNumbers = numbers.tail
+    if (currentOperations.isEmpty || currentOperations.head.isBinary || currentOperations.head.isMyCloseBrace) {
+      stackOfNumbers.add(currentNumbers.head)
+      currentNumbers = currentNumbers.tail
     }
 
     def dowhile: EvalResult = {
